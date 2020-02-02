@@ -40,9 +40,9 @@ void main() {
 
     app.ws('/').listen((socket) {
 
-      socket.onMessage().listen((data) {
+      socket.onMessage.listen((data) {
         print('msg: $data');
-        socket.close(1000, 'requested');
+        socket.send(data);
       });
 
       socket.onOpen.listen((ws) {
