@@ -24,9 +24,7 @@ class Socket implements SocketBase {
     _ws.add(message);
   }
 
-  Stream onMessage() {
-    return _messages;
-  }
+  Stream get onMessage => _messages;
 
   Stream get onOpen => _openController.stream;
 

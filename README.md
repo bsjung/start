@@ -22,7 +22,7 @@ void main() {
 
     app.ws('/socket').listen((socket) {
 
-      socket.onMessage().listen((data) {
+      socket.onMessage.listen((data) {
         print('data: $data');
         socket.send(data);
       });
@@ -103,7 +103,9 @@ render(viewName, [Map params]) // renders server view
 
 ```dart
 send(message) // sends message
-onMessage()   // adds handler to message
+onOpen        // open stream
+onClose       // close stream
+onMessage     // message stream
 close(status, reason) // closes socket
 ```
 
